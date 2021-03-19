@@ -1,0 +1,8 @@
+.home-container{
+  background-image: url(../images/Bg.png);
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  height: 800px
+ 
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Bus",
+    "image": "https://cdn.pixabay.com/photo/2018/03/05/15/13/coach-3200953_960_720.png",
+    "people": 20,
+    "price": 2000
+  },
+  {
+    "id": 2,
+    "name": "Car",
+    "image": "https://cdn.pixabay.com/photo/2012/05/29/00/43/car-49278__340.jpg",
+    "people": 4,
+    "price": 200
+  },
+  {
+    "id": 3,
+    "name": "Bike",
+    "image": "https://p.kindpng.com/picc/s/174-1748903_honda-crf250l-car-motorcycle-bicycle-honda-motorcycle-vector.png",
+    "people": 2,
+    "price": 100
+  },
+  {
+    "id": 4,
+    "name": "Train",
+    "image": "https://cdn.pixabay.com/photo/2015/08/27/15/03/vintage-910620_1280.png",
+    "people": 40,
+    "price": 50
+  }
+]

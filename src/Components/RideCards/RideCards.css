@@ -1,0 +1,11 @@
+.card-image{
+  width: 10rem;
+  margin: auto;
+  padding-top: 50px;
+}
+.card-container{
+  border-radius: 20px;
+  margin-top: 30%;
+  height: 20rem;
+
+}
