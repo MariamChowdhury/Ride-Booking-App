@@ -16,7 +16,7 @@ const RideCards = (props) => {
             <Card.Body>
                 <div className="text-center">
                     <Card.Title>{name}</Card.Title>
-                    <Button variant="primary" onClick={handleRides}>Book {name}!</Button>
+                    <Button variant="danger" onClick={handleRides}>Book {name}!</Button>
                 </div>
             </Card.Body>
         </Card>

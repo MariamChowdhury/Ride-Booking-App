@@ -8,7 +8,7 @@ const Home = () => {
     setRideInfo(RideInfo);
   }, []);
   return (
-    <div className="home-container">
+    <div>
       <div className="container mt-5">
         <div className="row">
           {rideInfo.map((rideInfo) => (

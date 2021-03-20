@@ -1,0 +1,11 @@
+.links{
+  color:black;
+  padding: 20px;
+  font-weight: bold;
+}
+.links:hover{
+  text-decoration: none;
+  color: black;
+
+
+}

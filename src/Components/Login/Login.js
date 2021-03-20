@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./firebase.config";
 import { Button, Form } from "react-bootstrap";
 import "./Login.css";
+import { UserContext } from "../../App";
+import { useHistory, useLocation } from "react-router";
 firebase.initializeApp(firebaseConfig);
 const Login = () => {
   const [newUser, setNewUser] = useState(false);
@@ -16,6 +18,10 @@ const Login = () => {
     success: false,
     newUser: false,
   });
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  let history = useHistory();
+  let location = useLocation();
+  let { from } = location.state || { from: { pathname: "/" } };
 
   const handleSignInWithGoogle = () => {
     var googleProvider = new firebase.auth.GoogleAuthProvider();
@@ -30,7 +36,8 @@ const Login = () => {
           email: email,
         };
         setUser(signedInUser);
-        console.log(displayName, email);
+        setLoggedInUser(signedInUser);
+        history.replace(from);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -65,6 +72,8 @@ const Login = () => {
           newUserInfo.error = "";
           newUserInfo.success = true;
           setUser(newUserInfo);
+          setLoggedInUser(newUserInfo);
+          history.replace(from);
         })
         .catch((error) => {
           const newUserInfo = { ...user };
@@ -92,6 +101,12 @@ const Login = () => {
   return (
     <div className="container col-md-4 my-5">
       <Form className="form-container" onSubmit={handleSubmitButton}>
+      <p style={{ color: "red" }}>{user.error}</p>
+        {user.success && (
+          <p style={{ color: "green",fontWeight:'bolder' }}>
+            User {newUser ? "created" : "logged in"} successfully
+          </p>
+        )}
         <Form.Group>
           <Form.Check
             type="checkbox"
@@ -103,7 +118,7 @@ const Login = () => {
         {newUser && (
           <Form>
             <h4>Sign Up</h4>
-            <Form.Group>
+            <Form.Group controlId="formBasicName">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="name"
@@ -143,12 +158,6 @@ const Login = () => {
           {newUser ? "Sign Up" : "Sign In"}
         </Button>
         <br />
-        <p style={{ color: "red" }}>{user.error}</p>
-        {user.success && (
-          <p style={{ color: "green" }}>
-            User {newUser ? "created" : "logged in"} successfully
-          </p>
-        )}
       </Form>
       <Button
         variant="danger"
@@ -156,7 +165,7 @@ const Login = () => {
         style={{ margin: "20px" }}
         onClick={handleSignInWithGoogle}
       >
-        Sign in with Google
+        Continue with Google
       </Button>
     </div>
   );

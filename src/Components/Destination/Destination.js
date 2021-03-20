@@ -19,11 +19,11 @@ const Destination = () => {
           <Form className="mb-5">
             <Form.Group>
               <Form.Label>Pick From</Form.Label>
-              <Form.Control type="text" required/>
+              <Form.Control type="text" placeholder='Mirpur' required/>
             </Form.Group>
             <Form.Group>
               <Form.Label>Pick To</Form.Label>
-              <Form.Control type="text" required/>
+              <Form.Control type="text" placeholder='Gulshan'  required/>
             </Form.Group>
             <Button variant="primary" onClick={() => setSubmit(true)}>
               Submit
