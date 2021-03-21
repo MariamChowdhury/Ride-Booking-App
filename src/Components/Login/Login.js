@@ -101,9 +101,9 @@ const Login = () => {
   return (
     <div className="container col-md-4 my-5">
       <Form className="form-container" onSubmit={handleSubmitButton}>
-      <p style={{ color: "red" }}>{user.error}</p>
+        <p style={{ color: "red" }}>{user.error}</p>
         {user.success && (
-          <p style={{ color: "green",fontWeight:'bolder' }}>
+          <p style={{ color: "green", fontWeight: "bolder" }}>
             User {newUser ? "created" : "logged in"} successfully
           </p>
         )}
