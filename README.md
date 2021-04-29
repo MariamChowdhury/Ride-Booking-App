@@ -1,2 +1,4 @@
 ### https://bd-rider-app.web.app/
-This rider app helps people to reach their  destination in the shortest time span . Enjoy !
+* This is a rider app that let's people book any ride according to their choice.
+* If anyone wants to order a ride , they have to login first.
+* Only if they are logged in ,then they can select ride.
