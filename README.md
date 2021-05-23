@@ -1,4 +1,4 @@
-### https://bd-rider-app.web.app/
-* This is a rider app that let's people book any ride according to their choice.
-* If anyone wants to order a ride , they have to login first.
-* Only if they are logged in ,then they can select their ride.
+#### Live Site: https://bd-rider-app.web.app/
+* Login system is implemented using firebase authentication
+* User can log in either using google account or they can logged in with their email
+* after log in one can select any ride for their destination
